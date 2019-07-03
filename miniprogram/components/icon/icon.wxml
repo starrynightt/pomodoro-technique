@@ -1,0 +1,8 @@
+<wxs src="../../lib/todoInfo.wxs" module="todoInfo"></wxs>
+<view class="icon-container">
+    <icon 
+        class="icon" 
+        type="{{todoInfo.todoType(type)}}" size="{{size}}" 
+        color="{{todoInfo.todoTypeColor(type)}}"  />
+    <text style="color: {{todoInfo.todoTypeColor(type)}}">({{todoInfo.todoTypeText(type)}})</text>
+</view>

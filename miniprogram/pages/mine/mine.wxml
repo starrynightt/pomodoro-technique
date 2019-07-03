@@ -1,0 +1,10 @@
+<view class="login">
+        <view class="avatar">
+            <open-data type='userAvatarUrl'></open-data>
+        </view>
+        <view class="name-wrap">
+            <open-data type='userNickName' class="name"></open-data>,
+            <text class="welcome">欢迎回来</text>
+        
+    </view>
+</view>

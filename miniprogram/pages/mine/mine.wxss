@@ -1,0 +1,29 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #EEF7F6;
+  }
+  .login .avatar { 
+    width: 250rpx;
+    height: 250rpx;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 16rpx solid #F6705A;
+    margin-bottom: 20rpx;
+   }
+   .login .name-wrap { 
+     color: #F6705A;
+     font-size: 38rpx;
+     position: relative;
+     justify-content: center;
+     width: 90%;
+     word-wrap: break-word;
+     text-align: center;
+     padding: 0 40rpx;
+  }
+.welcome {
+    margin-left: 16rpx
+}

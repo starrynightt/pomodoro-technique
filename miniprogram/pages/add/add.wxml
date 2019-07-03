@@ -1,0 +1,12 @@
+<view class="add-container">
+    <form>
+        <view class="section">
+            <text>任务描述</text>
+            <textarea maxlength="8" placeholder="请输入任务描述" />
+        </view>
+        <view class="section">
+            <text>选择任务持续时间</text>
+            <textarea maxlength="8" placeholder="请输入任务描述" />
+        </view>
+    </form>
+</view>

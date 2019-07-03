@@ -1,0 +1,15 @@
+module.exports = {
+    todoType: function(todoType){
+        // todoType: 0 新建, 1 完成, 2:暂停, 3:放弃
+        var arr = ['info', 'success', 'waiting', 'cancel'];
+        return arr[todoType];
+    },
+    todoTypeText: function(todoType) {
+        var arr = ['新建', '已完成', '待完成', '放弃'];
+        return arr[todoType];
+    },
+    todoTypeColor: function(todoType) {
+        var arr = ['#10aeff', '#09bb07', '#6e007c', '#d96260'];
+        return arr[todoType];
+    }
+}
