@@ -1,15 +1,19 @@
 module.exports = {
     todoType: function(todoType){
-        // todoType: 0 新建, 1 完成, 2:暂停, 3:放弃
-        var arr = ['info', 'success', 'waiting', 'cancel'];
+        // todoType: 0 新建, 1 完成, 2:待完成, 3:放弃 4: 进行中
+        var arr = ['info', 'success', 'waiting', 'cancel', 'download'];
         return arr[todoType];
     },
     todoTypeText: function(todoType) {
-        var arr = ['新建', '已完成', '待完成', '放弃'];
+        var arr = ['新建', '已完成', '待完成', '放弃', '进行中'];
         return arr[todoType];
     },
     todoTypeColor: function(todoType) {
-        var arr = ['#10aeff', '#09bb07', '#6e007c', '#d96260'];
+        var arr = ['#10aeff', '#09bb07', '#6e007c', '#d96260', '#e8a426'];
+        return arr[todoType];
+    },
+    todoButtonText: function(todoType) {
+        var arr = ['开始任务', '', '时间已到, 标记为完成', '', '']
         return arr[todoType];
     }
 }

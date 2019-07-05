@@ -1,8 +1,33 @@
 .add-container {
     height: 100vh;
     background: #F6F6F6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* display: flex;
+    flex-direction: column; */
 }
+
+.section {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.section  .form-title {
+    background: #F6F6F6;
+    font-size: 28rpx;
+    padding: 16rpx 20rpx;
+    color: #777;
+}
+.section  .form-item {
+    background: #fff;
+    width: 100%;
+    font-size: 32rpx;
+}
+
+textarea.form-item {
+    height: 120rpx;
+    padding: 20rpx;
+}
+
+.fun-wrap {
+    margin-top: 80rpx;
+}
+

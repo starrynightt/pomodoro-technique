@@ -1,0 +1,19 @@
+<wxs src="../../lib/todoInfo.wxs" module="todoInfo"></wxs>
+<view class="cantainer">
+    <view class="clock">
+        <t-clock fontSize="52" text="{{displayTime}}"></t-clock>
+    </view>
+    <view class="text-wrap">
+        <view>
+            当前状态: <text style="color: {{todoInfo.todoTypeColor(type)}}">{{todoInfo.todoTypeText(type)}}</text>
+        </view>
+    </view>
+    <view>
+        <view hidden="{{type === 1 || type === 3 || type === 4}}">
+            <t-button type="change" size="mini" text="{{todoInfo.todoButtonText(type)}}" bind:tap="tapHandler" ></t-button>
+        </view>
+        <view class="giveup-wrap" hidden="{{type === 0 || type === 1 ||type === 3}}">
+            <t-button size="mini" text="放弃任务" bind:tap="giveUp"></t-button>
+        </view>
+    </view>
+</view>

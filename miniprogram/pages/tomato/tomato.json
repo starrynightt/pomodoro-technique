@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "t-icon": "../../components/icon/icon",
+    "t-clock": "../../components/clock/clock",
     "t-button": "../../components/button/button"
   }
 }

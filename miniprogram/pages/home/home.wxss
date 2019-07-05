@@ -6,7 +6,13 @@
     flex-direction: column;
     position: relative;
 }
-
+.home-cover {
+    height: 100vh;
+    background: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .todoList {
     height: 100%;
     padding: 13rpx 30rpx;
@@ -23,6 +29,7 @@
     border-radius: 8rpx;
     padding: 24rpx 26rpx;
     margin-bottom: 24rpx;
+    position: relative;
 }
 
 .todoList .item:last-child {
@@ -59,10 +66,44 @@
     border-radius: 50%;
     background: #FE996F;
 }
-.createButton { 
-    position: absolute;
-    top: 880rpx;
-    left: 50%;
-    transform: translateX(-50%);
-}
- 
+ .item .delete {
+     width: 140rpx;
+     background: red;
+     color: #fff;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     right: -140rpx;
+     padding: 24rpx 0;
+     text-align: center;
+ }
+
+ .swiper-in {
+     animation: slidein 0.25s ease-out;
+     animation-fill-mode: forwards;
+ }
+
+ .swiper-out {
+     animation: slideout 0.25s ease-in;
+ }
+
+ @keyframes slidein {
+    0% {
+        right: -140rpx;
+    }
+    80% {
+        right: 20rpx;
+    }
+    100% {
+        right: 0;
+    }
+ }
+
+ @keyframes slideout {
+     from {
+         right: 0;
+     }
+     to {
+         right: -140rpx;
+     }
+ }

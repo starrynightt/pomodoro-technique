@@ -1,81 +1,23 @@
 <view class="home-container">
-<scroll-view class="todoList" scroll-y="true">
-    <view class="item">
-      <t-icon type="0" ></t-icon>
-      <text>11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111</text>
+  <view wx:if="{{todoList === null}}" class="home-cover">
+    <view hidden="{{!reload}}">
+      <t-button type="change" size="mini" class="createButton" text="加载失败, 请重试" bind:tap="reloadList"></t-button>
     </view>
-    <view class="item">
-      <t-icon type="1"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="2"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="3"></t-icon>
-      <text>11111111</text>
-    </view>
-     <view class="item">
-      <t-icon type="0" ></t-icon>
-      <text>11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="1"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="2"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="3"></t-icon>
-      <text>11111111</text>
-    </view>
-     <view class="item">
-      <t-icon type="0" ></t-icon>
-      <text>11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="1"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="2"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="3"></t-icon>
-      <text>11111111</text>
-    </view>
-     <view class="item">
-      <t-icon type="0" ></t-icon>
-      <text>11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111
-      11111111111111111111111111111111111111111111111111111111111111111111111111111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="1"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="2"></t-icon>
-      <text>11111111</text>
-    </view>
-    <view class="item">
-      <t-icon type="3"></t-icon>
-      <text>11111111</text>
+  </view>
+  <view wx:elif="{{todoList.length === 0}}" class="home-cover">
+    <t-button type="change" size="mini" class="createButton" text="创建你的第一个任务" bind:tap="creatTodo"></t-button>
+  </view>
+  <scroll-view wx:else class="todoList" scroll-y="true">
+    <view class="item" wx:for="{{todoList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}"
+          bind:tap="enterTomato" 
+          data-idx="{{index}}"
+          bind:touchstart="startHandler"
+          bind:touchend="endHandler">
+      <t-icon type="{{item.todotype}}"></t-icon>
+      <text>{{item.description}}</text>
+      <view data-idx="{{index}}" class="delete {{(index === currentEditIndex && triggerSlideInAnim) ? 'swiper-in': ''}} {{(index === currentEditIndex && triggerSlideOutAnim)? 'swiper-out': '' }}"
+            bind:animationend="animationend"
+            catch:tap="deleteHandler">删除</view>
     </view>
   </scroll-view>
-  <!-- <t-button type="change" size="mini" class="createButton" text="创建任务" bindtap='showCreateConfirm'>创建任务</t-button> -->
 </view>

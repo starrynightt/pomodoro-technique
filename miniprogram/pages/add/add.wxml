@@ -1,12 +1,22 @@
 <view class="add-container">
     <form>
         <view class="section">
-            <text>任务描述</text>
-            <textarea maxlength="8" placeholder="请输入任务描述" />
+            <view class="form-title">任务描述</view>
+            <textarea class="form-item" auto-focus bindinput="inputHandler" />
         </view>
         <view class="section">
-            <text>选择任务持续时间</text>
-            <textarea maxlength="8" placeholder="请输入任务描述" />
+            <view class="form-title">选择任务持续时间(最小单位:分钟)</view>
+            <picker mode="multiSelector" 
+                    value="{{multiIndex}}" 
+                    range="{{multiArray}}"
+                    bindchange="bindMultiPickerChange"
+                    bindcolumnchange="bindMultiPickerColumnChange">
+                <view style="padding: 12rpx 20rpx" class="form-item">{{multiArray[0][multiIndex[0]]}}:{{multiArray[1][multiIndex[1]]}}</view>
+            </picker>
         </view>
     </form>
+    <view class="fun-wrap">
+         <t-button type="change" size="mini" class="saveButton" text="保存" bindtap='saveTodo'></t-button>
+    </view>
+   
 </view>

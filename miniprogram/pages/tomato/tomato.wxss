@@ -1,0 +1,17 @@
+.cantainer {
+    background: #F0F7F6;
+    height: 100vh;
+    padding-top: 90rpx;
+    box-sizing: border-box;
+  }
+
+.text-wrap {
+  text-align: center;
+  font-size: 30rpx;
+  color:#333;
+  margin: 40rpx 0;
+}
+
+.giveup-wrap {
+  margin-top: 50rpx;
+}
